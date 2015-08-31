@@ -15,7 +15,7 @@ describe 'Login Page' do
 
 context 'with valid credentials'
   it 'Verify existing  user can login  ' do
-    index_page = @site.index_page.navigate_to_app_root
+    @site.index_page.navigate_to_app_root
                       .go_to_sign_in
     login_page_test = @site.login_page
     login_page_test.login('test@test.com','test')
@@ -26,5 +26,4 @@ context 'with valid credentials'
   after(:each) do
     @site.teardown
   end
-
 end
