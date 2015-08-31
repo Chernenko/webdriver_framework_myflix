@@ -13,7 +13,7 @@ describe 'Login Page' do
   end
 
 
-context 'with valid credentials'
+context 'with valid credentials' do
   it 'Verify existing  user can login  ' do
     @site.index_page.navigate_to_app_root
                       .go_to_sign_in
@@ -22,8 +22,20 @@ context 'with valid credentials'
     home_page  = @site.home_page.logged?
     expect(home_page).to eq("You are signed in, enjoy!")
   end
+end
+  context 'with invalid credentials' do
+    it 'Verify existing  user can login  ' do
+      @site.index_page.navigate_to_app_root
+          .go_to_sign_in
+      login_page_test = @site.login_page
+      login_page_test.login('test@test.com','tes')
+      test = login_page_test.invalid_credentials?
+      expect(test).to eq("Invalid email or password.")
+    end
+  end
 
-  after(:each) do
+    after(:each) do
     @site.teardown
   end
 end
+

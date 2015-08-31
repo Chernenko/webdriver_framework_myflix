@@ -11,7 +11,10 @@ class LoginPage < BrowserContainer
     password_input.send_keys(password)
     login_button =  @browser.find_element(:id, 'submit')
     login_button.click
+  end
 
+  def invalid_credentials?
+    @browser.find_element(:id, 'flash_danger').text
   end
 
 end

@@ -21,4 +21,3 @@ class IndexPage < BrowserContainer
   end
 end
 
-#undefined method `login' for #<IndexPage:0x007fbb3ab0dce8>
