@@ -12,6 +12,9 @@ class Site < BrowserContainer
     @home_page = HomePage.new(@browser)
   end
 
+  def register_page
+    @register_page = RegisterPage .new(@browser)
+  end
 end
 
 

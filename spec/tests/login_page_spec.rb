@@ -16,7 +16,7 @@ describe 'Login Page' do
 context 'with valid credentials' do
   it 'Verify existing  user can login  ' do
     @site.index_page.navigate_to_app_root
-                      .go_to_sign_in
+                     .go_to_sign_in
     login_page_test = @site.login_page
     login_page_test.login('test@test.com','test')
     home_page  = @site.home_page.logged?

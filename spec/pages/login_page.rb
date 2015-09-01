@@ -16,9 +16,11 @@ class LoginPage < BrowserContainer
   def invalid_credentials?
     @browser.find_element(:id, 'flash_danger').text
   end
-
-end
-
-
+  # method for register page , returning item from sign in page
+  # after register
+  def is_button_present?
+    @browser.find_element(:tag_name, 'h2').text
+    end
+  end
 
 
